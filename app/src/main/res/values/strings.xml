@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lab03c2016</string>
+    <string name="monedaUS">U$S</string>
+    <string name="monedaUE">€</string>
+    <string name="monedaAR">AR$</string>
+    <string name="monedaUK">£</string>
+    <string name="monedaBR">R$</string>
 </resources>
