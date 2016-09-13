@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
@@ -49,7 +50,7 @@ public class Adaptador extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
         View fila=convertView;
         if(fila==null){
             fila = inflater.inflate(R.layout.oferta_laboral, parent, false);
@@ -58,6 +59,13 @@ public class Adaptador extends BaseAdapter{
         if(holder==null){
             holder=new ViewHolder(fila);
             fila.setTag(holder);
+            fila.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    Toast.makeText(context, getItem(position).getDescripcion(), Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            });
         }
 
         Format formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
