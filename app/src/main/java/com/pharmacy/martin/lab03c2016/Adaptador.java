@@ -14,7 +14,6 @@ import android.widget.Toast;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 import static android.graphics.Typeface.BOLD;
@@ -62,10 +61,12 @@ public class Adaptador extends BaseAdapter{
             fila.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    Toast.makeText(context, getItem(position).getDescripcion(), Toast.LENGTH_LONG).show();
+                    ViewHolder hold = (ViewHolder) view.getTag();
+                    Toast.makeText(context, hold.trabajo.getText(), Toast.LENGTH_LONG).show();
                     return false;
                 }
             });
+
         }
 
         Format formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
