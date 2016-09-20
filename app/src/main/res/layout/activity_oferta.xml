@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_oferta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.pharmacy.martin.lab03c2016.Oferta"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tvCrearOferta"
+        android:text="@string/crearOferta"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="@string/elegirCategoría"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvElejirCategoria" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnrCategorias" />
+
+    <TextView
+        android:text="@string/monedaPago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvMonedaPago" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/rgMonedas" >
+
+        <RadioButton
+            android:text="@string/monedaUS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbUS"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="@string/monedaUE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbUE"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="@string/monedaAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbAR"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="@string/monedaUK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbUK"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="@string/monedaBR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbBR"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+
+    <TextView
+        android:text="@string/ingresarOferta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvIngresarOferta" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etOferta"
+        android:hint="@string/oferta" />
+</LinearLayout>

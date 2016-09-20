@@ -5,4 +5,9 @@
     <string name="monedaAR">AR$</string>
     <string name="monedaUK">£</string>
     <string name="monedaBR">R$</string>
+    <string name="crearOferta">Cree su oferta</string>
+    <string name="ingresarOferta">Ingrese la oferta</string>
+    <string name="elegirCategoría">Elija la categoría</string>
+    <string name="monedaPago">Elija la moneda de pago</string>
+    <string name="oferta">Oferta</string>
 </resources>
