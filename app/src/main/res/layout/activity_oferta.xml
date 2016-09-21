@@ -91,4 +91,10 @@
         android:ems="10"
         android:id="@+id/etOferta"
         android:hint="@string/oferta" />
+
+    <Button
+        android:text="@string/bConfOferta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnConfirmarOferta" />
 </LinearLayout>

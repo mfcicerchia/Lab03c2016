@@ -10,4 +10,7 @@
     <string name="elegirCategoría">Elija la categoría</string>
     <string name="monedaPago">Elija la moneda de pago</string>
     <string name="oferta">Oferta</string>
+    <string name="mCrearOferta">Crear una oferta</string>
+    <string name="mAbout">About</string>
+    <string name="bConfOferta">Confirmar Oferta</string>
 </resources>

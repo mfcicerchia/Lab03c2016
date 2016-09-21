@@ -55,4 +55,11 @@ public class Categoria implements Serializable {
             new Categoria(5,"Mobile Developer")
     };
 
+    /**
+     * Este metodo se sobreescribe para mostrar en el Spinner la descripcion de las categorías
+     */
+    @Override
+    public String toString() {
+        return descripcion;
+    }
 }

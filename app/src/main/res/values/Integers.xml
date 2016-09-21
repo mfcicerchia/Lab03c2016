@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="US">1</integer>
+    <integer name="UE">2</integer>
+    <integer name="AR">3</integer>
+    <integer name="UK">4</integer>
+    <integer name="BR">5</integer>
+</resources>
