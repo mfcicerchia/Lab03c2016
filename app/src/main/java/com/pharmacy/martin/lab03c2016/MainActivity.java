@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setLista(ArrayList<Trabajo> lista){
         Trabajo trabajo = new Trabajo();
-        for (int i=0; i<18;i++){
+        for (int i=0; i<Trabajo.TRABAJOS_MOCK.length; i++){
             lista.add(trabajo.TRABAJOS_MOCK[i]);
         }
     }

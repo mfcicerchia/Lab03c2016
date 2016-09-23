@@ -1,6 +1,7 @@
 package com.pharmacy.martin.lab03c2016;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
@@ -22,12 +23,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Oferta extends AppCompatActivity {
 
-    String oferta;
-    Integer moneda, idJob;
-    Categoria categoria;
+    private String oferta;
+    private Integer moneda, idJob;
+    private Categoria categoria;
+    private Spinner spnrCategorias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +46,13 @@ public class Oferta extends AppCompatActivity {
          */
         ArrayList<Categoria> catList = new ArrayList<Categoria>();
         Categoria cat = new Categoria();
-        for (int i=0; i<4;i++){
+        for (int i=0; i< Categoria.CATEGORIAS_MOCK.length ; i++){
             catList.add(cat.CATEGORIAS_MOCK[i]);
         }
         /**
          *Seteamos el Spinner
          */
-        Spinner spnrCategorias = (Spinner) findViewById(R.id.spnrCategorias);
+        spnrCategorias = (Spinner) findViewById(R.id.spnrCategorias);
         ArrayList<Categoria> catStrng = new ArrayList<Categoria>(catList);
         ArrayAdapter<Categoria> adaptador = new ArrayAdapter<Categoria>(this, android.R.layout.simple_spinner_item,catStrng);
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -90,8 +93,10 @@ public class Oferta extends AppCompatActivity {
                         moneda = getResources().getInteger(R.integer.BR);
                         break;
                 }
+                Log.d("onCheckedChanged", String.valueOf(moneda));
             }
         });
+
         /**
          * Inicializamos el EditText y almacenamos su contenido
          */
@@ -143,11 +148,21 @@ public class Oferta extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        outState.putString("oferta",oferta);
+        final RadioGroup rgMoneda = (RadioGroup) findViewById(R.id.rgMonedas);
+        outState.putInt("moneda", rgMoneda.getCheckedRadioButtonId());
+        outState.putInt("posicion", spnrCategorias.getSelectedItemPosition());
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+        EditText etOferta = (EditText) findViewById(R.id.etOferta);
+        etOferta.setText(savedInstanceState.getString("oferta"));
+        spnrCategorias.setSelection(savedInstanceState.getInt("posicion"));
+        RadioGroup rgMoneda = (RadioGroup) findViewById(R.id.rgMonedas);
+        rgMoneda.check(savedInstanceState.getInt("moneda"));
+
     }
 
 }
