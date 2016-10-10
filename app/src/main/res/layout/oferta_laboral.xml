@@ -87,6 +87,7 @@
             android:id="@+id/cbIngles"
             android:checked="false"
             android:enabled="false"
-            android:focusable="false" />
+            android:focusable="false"
+            android:clickable="false" />
     </LinearLayout>
 </LinearLayout>

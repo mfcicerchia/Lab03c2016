@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,6 +30,7 @@ public class Adaptador extends BaseAdapter{
         this.context = context;
         inflater = LayoutInflater.from(context);
     }
+
     @Override
     public int getCount() {
         return items.size();
@@ -38,7 +38,6 @@ public class Adaptador extends BaseAdapter{
 
     @Override
     public Trabajo getItem(int position) {
-
         return items.get(position);
 
     }
@@ -58,14 +57,14 @@ public class Adaptador extends BaseAdapter{
         if(holder==null){
             holder=new ViewHolder(fila);
             fila.setTag(holder);
-            fila.setOnLongClickListener(new View.OnLongClickListener() {
+            /*fila.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
                     ViewHolder hold = (ViewHolder) view.getTag();
                     Toast.makeText(context, hold.trabajo.getText(), Toast.LENGTH_LONG).show();
                     return false;
                 }
-            });
+            });*/
 
         }
 
@@ -130,4 +129,5 @@ public class Adaptador extends BaseAdapter{
             this.ingles = (CheckBox)base.findViewById(R.id.cbIngles);
         }
     }
+
 }

@@ -10,8 +10,18 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/mAbout"
-        android:title="@string/mAbout"
+        android:id="@+id/mVerOfertas"
+        android:title="@string/mVerOfertas"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/mConfiguracion"
+        android:title="@string/mConfiguracion"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/mSalir"
+        android:title="@string/mSalir"
         app:showAsAction="never"/>
 
 </menu>
